@@ -1,16 +1,15 @@
-
-import { useAuth } from '@/contexts/AuthContext';
-import { Navigate } from 'react-router-dom';
-import LandingPage from './LandingPage';
+import { Navigate } from "react-router-dom";
+import { useAuth } from "@/contexts/AuthContext";
+import LandingPage from "./LandingPage";
 
 const Index = () => {
-  const { user } = useAuth();
+	const { user } = useAuth();
 
-  if (user) {
-    return <Navigate to="/dashboard" replace />;
-  }
+	if (user) {
+		return <Navigate to="/dashboard" replace />;
+	}
 
-  return <LandingPage />;
+	return <LandingPage />;
 };
 
 export default Index;
