@@ -10,7 +10,8 @@ import {
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import HeroSectionPage from "@/components/HeroSection";
+import Features from "@/components/LandingPage/Features";
+import HeroSectionPage from "@/components/LandingPage/HeroSection";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -72,13 +73,17 @@ const LandingPage = () => {
 	];
 
 	return (
-		<div className="min-h-screen bg-background">
+		<div className="min-h-screen relative z-0 overflow-hidden bg-background">
+			<div className="absolute inset-0 cosmic-grid"></div>
+			<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full">
+				<div className="w-full h-full opacity-10 bg-primary blur-[120px]"></div>
+			</div>
+
 			<Header />
 
-			{/* Hero Section */}
 			<HeroSectionPage />
-			{/* Features Section */}
-			<section className="section-padding">
+			<Features />
+			{/* <section className="section-padding bg-aalvo-surface z-10 relative">
 				<div className="container-wide">
 					<div className="text-center mb-16 fade-in-up">
 						<h2 className="text-headline text-aalvo-text-primary mb-4">
@@ -94,30 +99,28 @@ const LandingPage = () => {
 						{features.map((feature, index) => {
 							const Icon = feature.icon;
 							return (
-								<Card
+								<div
 									key={feature.title}
-									className={`card-elevated group hover:shadow-elevated transition-all duration-300 fade-in-up-delay-${index + 1}`}
+									className={`group bg-white border border-aalvo-border-subtle rounded-xl p-6 hover:border-aalvo-primary/20 transition-all duration-200 fade-in-up-delay-${index + 1}`}
 								>
-									<CardContent className="p-6 text-center">
-										<div className="w-12 h-12 bg-aalvo-accent rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-											<Icon className="h-6 w-6 text-aalvo-text-primary" />
-										</div>
-										<h3 className="font-semibold text-aalvo-text-primary mb-2">
-											{feature.title}
-										</h3>
-										<p className="text-sm text-aalvo-text-secondary">
-											{feature.description}
-										</p>
-									</CardContent>
-								</Card>
+									<div className="w-10 h-10 bg-aalvo-surface rounded-lg flex items-center justify-center mb-4 group-hover:bg-aalvo-accent transition-colors">
+										<Icon className="h-5 w-5 text-aalvo-text-primary" />
+									</div>
+									<h3 className="font-medium text-aalvo-text-primary mb-3">
+										{feature.title}
+									</h3>
+									<p className="text-sm text-aalvo-text-secondary leading-relaxed">
+										{feature.description}
+									</p>
+								</div>
 							);
 						})}
 					</div>
 				</div>
-			</section>
+			</section> */}
 
 			{/* How it Works */}
-			<section className="section-padding bg-aalvo-surface">
+			<section className="section-padding relative ">
 				<div className="container-narrow">
 					<div className="text-center mb-16 fade-in-up">
 						<h2 className="text-headline text-aalvo-text-primary mb-4">
@@ -168,7 +171,7 @@ const LandingPage = () => {
 			</section>
 
 			{/* Benefits */}
-			<section className="section-padding">
+			<section className="section-padding relative z-20">
 				<div className="container-narrow">
 					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 						<div className="fade-in-up">
@@ -252,7 +255,7 @@ const LandingPage = () => {
 			</section>
 
 			{/* CTA Section */}
-			<section className="section-padding bg-aalvo-primary text-white">
+			<section className="section-padding bg-aalvo-primary text-white relative z-10">
 				<div className="container-narrow text-center">
 					<div className="fade-in-up">
 						<h2 className="text-headline mb-4">
