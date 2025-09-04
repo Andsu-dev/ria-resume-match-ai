@@ -6,27 +6,12 @@ import {
 	Sparkles,
 	Target,
 } from "lucide-react";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "../ui/button";
-
-const typingText = "Construa seu currículo com IA";
+import { Button } from "../../ui/button";
 
 const HeroSectionPage = () => {
-	const [displayedText, setDisplayedText] = useState("");
-
-	useEffect(() => {
-		let index = 0;
-		const interval = setInterval(() => {
-			setDisplayedText(typingText.slice(0, index));
-			index++;
-			if (index > typingText.length) clearInterval(interval);
-		}, 70);
-		return () => clearInterval(interval);
-	}, []);
-
 	return (
-		<section className="section-padding bg-gradient-subtle">
+		<section className="section-padding bg-gradient-subtle z-10">
 			<div className="container-narrow text-center">
 				<motion.div
 					initial={{ opacity: 0, y: -20 }}
@@ -45,7 +30,7 @@ const HeroSectionPage = () => {
 				>
 					<h1 className="text-display text-aalvo-text-primary mb-6 text-balance relative inline-block">
 						<span className="bg-gradient-to-r from-aalvo-primary to-gray-600 bg-clip-text text-transparent">
-							{displayedText}
+							A tecnologia que faz você ser NOTADO
 						</span>
 						<div className="absolute -top-1 -right-2">
 							<Sparkles className="h-8 w-8 text-yellow-400 animate-float" />
