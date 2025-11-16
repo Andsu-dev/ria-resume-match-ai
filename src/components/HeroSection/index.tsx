@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
 
-const typingText = "Construa seu currículo com IA";
+const typingText = "Otimize tarefas com Aalvo AI";
 
 const HeroSectionPage = () => {
 	const [displayedText, setDisplayedText] = useState("");
@@ -59,8 +59,8 @@ const HeroSectionPage = () => {
 					transition={{ duration: 0.8, delay: 1 }}
 				>
 					<p className="text text-aalvo-text-secondary mb-8 max-w-2xl mx-auto text-balance">
-						Seja o <strong>alvo da vaga dos seus sonhos</strong> e receba
-						sugestões personalizadas para maximizar suas chances de sucesso.
+						Um <strong>assistente que sabe mais do seu negócio</strong> do que você mesmo.
+						Automatize processos, analise dados e execute tarefas complexas sob demanda.
 					</p>
 				</motion.div>
 
@@ -70,15 +70,11 @@ const HeroSectionPage = () => {
 					transition={{ duration: 0.8, delay: 1.4 }}
 					className="flex flex-col sm:flex-row items-center justify-center gap-4"
 				>
-					<Link to="/signup">
-						<Button variant="outline" className=" group">
-							Comece grátis
-							<ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
-						</Button>
-					</Link>
-					<Link to="/login">
-						<Button className="btn-secondary">Já tenho conta</Button>
-					</Link>
+					<Button variant="outline" className="group">
+						Agende uma demo
+						<ArrowRight className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />
+					</Button>
+					<Button className="btn-secondary">Ver como funciona</Button>
 				</motion.div>
 
 				{/* Card de exemplo */}
@@ -94,30 +90,30 @@ const HeroSectionPage = () => {
 								<div className="space-y-4">
 									<div className="flex items-center gap-3">
 										<div className="w-12 h-12 bg-aalvo-accent rounded-xl flex items-center justify-center">
-											<FileText className="h-6 w-6 text-aalvo-text-primary" />
+											<Sparkles className="h-6 w-6 text-aalvo-text-primary" />
 										</div>
 										<div>
 											<h3 className="font-semibold text-aalvo-text-primary">
-												Meu Currículo
+												Agent Executando
 											</h3>
 											<p className="text-sm text-aalvo-text-muted">
-												Desenvolvedor Frontend
+												Análise de dados em tempo real
 											</p>
 										</div>
 									</div>
 									<div className="bg-aalvo-surface rounded-lg p-4">
 										<div className="flex items-center justify-between mb-2">
 											<span className="text-sm font-medium text-aalvo-text-primary">
-												Match com a vaga
+												Tarefas processadas hoje
 											</span>
 											<span className="text-2xl font-bold text-green-600">
-												87%
+												142
 											</span>
 										</div>
 										<div className="w-full bg-gray-200 rounded-full h-2">
 											<div
-												className="bg-green-600 h-2 rounded-full"
-												style={{ width: "87%" }}
+												className="bg-green-600 h-2 rounded-full animate-pulse"
+												style={{ width: "78%" }}
 											></div>
 										</div>
 									</div>
@@ -126,19 +122,19 @@ const HeroSectionPage = () => {
 									<div className="flex items-center gap-2 text-sm">
 										<CheckCircle2 className="h-4 w-4 text-green-600" />
 										<span className="text-aalvo-text-secondary">
-											React e TypeScript
+											Relatórios gerados automaticamente
 										</span>
 									</div>
 									<div className="flex items-center gap-2 text-sm">
 										<CheckCircle2 className="h-4 w-4 text-green-600" />
 										<span className="text-aalvo-text-secondary">
-											Experiência com APIs
+											Dados sincronizados com seu CRM
 										</span>
 									</div>
 									<div className="flex items-center gap-2 text-sm">
-										<Target className="h-4 w-4 text-yellow-500" />
+										<CheckCircle2 className="h-4 w-4 text-green-600" />
 										<span className="text-aalvo-text-secondary">
-											Adicione experiência com testes
+											Respostas em linguagem natural
 										</span>
 									</div>
 								</div>
