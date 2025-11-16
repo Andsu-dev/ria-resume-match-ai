@@ -395,61 +395,61 @@ const LandingPage = () => {
 											onChange={(e) => {
 												const hours = e.target.value;
 												document.getElementById("hoursValue")!.textContent =
-													hours;
+													hours + "hrs";
 												const saved = Math.round(Number(hours) * 0.7);
 												document.getElementById("hoursSaved")!.textContent =
-													saved.toString();
+													saved + "hrs";
 												const monthly = saved * 4;
 												document.getElementById("monthlySaved")!.textContent =
-													monthly.toString();
+													monthly + "hrs";
 												const yearly = monthly * 12;
 												document.getElementById("yearlySaved")!.textContent =
-													yearly.toString();
+													yearly + "hrs";
 											}}
 										/>
 										<div className="flex justify-between text-sm text-aalvo-text-muted mt-2">
-											<span>1h</span>
+											<span>1hrs</span>
 											<span id="hoursValue" className="font-semibold">
-												10h
+												10hrs
 											</span>
-											<span>40h</span>
+											<span>40hrs</span>
 										</div>
 									</div>
 
 									<div className="bg-aalvo-accent rounded-xl p-6 space-y-4">
-										<div className="flex justify-between items-center">
+										<div className="flex justify-between items-center pb-4 border-b border-aalvo-border-subtle">
 											<span className="text-sm text-aalvo-text-secondary">
 												Tempo economizado por semana:
 											</span>
 											<span
 												id="hoursSaved"
-												className="text-2xl font-bold text-green-600"
+												className="text-3xl font-bold text-green-600"
 											>
-												7
+												7hrs
 											</span>
 										</div>
 
-										<div className="border-t border-aalvo-border-subtle pt-4 space-y-2">
-											<div className="flex justify-between text-sm">
-												<span className="text-aalvo-text-secondary">
+										<div className="space-y-3">
+											<div className="flex justify-between items-center">
+												<span className="text-sm text-aalvo-text-secondary">
 													Por mês:
 												</span>
 												<span
 													id="monthlySaved"
-													className="font-semibold text-aalvo-text-primary"
+													className="text-xl font-semibold text-aalvo-text-primary"
 												>
-													28h
+													28hrs
 												</span>
 											</div>
-											<div className="flex justify-between text-sm">
-												<span className="text-aalvo-text-secondary">
+											<div className="flex justify-between items-center">
+												<span className="text-sm text-aalvo-text-secondary">
 													Por ano:
 												</span>
 												<span
 													id="yearlySaved"
-													className="font-semibold text-aalvo-text-primary"
+													className="text-xl font-semibold text-aalvo-text-primary"
 												>
-													336h
+													336hrs
 												</span>
 											</div>
 										</div>
@@ -478,69 +478,26 @@ const LandingPage = () => {
 
 						{/* Pricing Cards */}
 						<div className="space-y-6 fade-in-up-delay-1">
-							<Card className="card-elevated">
-								<CardContent className="p-8">
-									<div className="mb-6">
-										<h3 className="text-title text-aalvo-text-primary mb-2">
-											Plano Starter
-										</h3>
-										<p className="text-sm text-aalvo-text-secondary">
-											Para times pequenos começando a otimizar
-										</p>
-									</div>
-
-									<div className="mb-6 relative">
-										<div className="text-4xl font-bold text-aalvo-text-primary filter blur-sm select-none">
-											R$ 999
-										</div>
-										<div className="absolute inset-0 flex items-center justify-center">
-											<span className="text-sm font-medium text-aalvo-text-primary bg-aalvo-accent px-4 py-1 rounded-full">
-												Sob consulta
-											</span>
-										</div>
-									</div>
-
-									<ul className="space-y-3 mb-8">
-										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
-											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
-											<span>Agent personalizado</span>
-										</li>
-										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
-											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
-											<span>Suporte prioritário</span>
-										</li>
-										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
-											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
-											<span>Integrações básicas</span>
-										</li>
-									</ul>
-
-									<Button className="w-full btn-secondary">
-										Solicitar orçamento
-									</Button>
-								</CardContent>
-							</Card>
-
 							<Card className="card-elevated border-2 border-aalvo-primary relative overflow-hidden">
 								<div className="absolute top-0 right-0 bg-aalvo-primary text-white text-xs font-semibold px-3 py-1 rounded-bl-lg">
-									Popular
+									Plano sob medida
 								</div>
 								<CardContent className="p-8">
 									<div className="mb-6">
 										<h3 className="text-title text-aalvo-text-primary mb-2">
-											Plano Enterprise
+											Aalvo AI Enterprise
 										</h3>
 										<p className="text-sm text-aalvo-text-secondary">
-											Para operações que exigem máxima eficiência
+											Solução completa personalizada para sua operação
 										</p>
 									</div>
 
-									<div className="mb-6 relative">
-										<div className="text-4xl font-bold text-aalvo-text-primary filter blur-sm select-none">
-											R$ 4.999
+									<div className="mb-6 relative h-20 flex items-center justify-center">
+										<div className="text-5xl font-bold text-aalvo-text-primary filter blur-md select-none">
+											R$ 12.499
 										</div>
 										<div className="absolute inset-0 flex items-center justify-center">
-											<span className="text-sm font-medium text-aalvo-text-primary bg-aalvo-accent px-4 py-1 rounded-full">
+											<span className="text-base font-semibold text-aalvo-text-primary bg-white px-6 py-2 rounded-full shadow-md border border-aalvo-border-subtle">
 												Sob consulta
 											</span>
 										</div>
@@ -549,19 +506,27 @@ const LandingPage = () => {
 									<ul className="space-y-3 mb-8">
 										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
 											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
-											<span>Tudo do Starter +</span>
+											<span>Implementação e criação de agent</span>
 										</li>
 										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
 											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
-											<span>Integrações ilimitadas</span>
+											<span>Onboarding personalizado</span>
 										</li>
 										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
 											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
-											<span>Treinamento customizado</span>
+											<span>Suporte premium</span>
 										</li>
 										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
 											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
-											<span>SLA dedicado</span>
+											<span>SLA dedicada</span>
+										</li>
+										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
+											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+											<span>Manutenção contínua</span>
+										</li>
+										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
+											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+											<span>Treinamento de equipe</span>
 										</li>
 									</ul>
 
@@ -570,6 +535,14 @@ const LandingPage = () => {
 									</Button>
 								</CardContent>
 							</Card>
+
+							<div className="bg-aalvo-accent rounded-xl p-6 text-center">
+								<p className="text-sm text-aalvo-text-secondary">
+									💼 <strong>Precisa de algo específico?</strong>
+									<br />
+									Montamos um plano customizado para seu negócio
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
