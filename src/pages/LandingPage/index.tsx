@@ -24,9 +24,9 @@ const LandingPage = () => {
 		},
 		{
 			icon: Target,
-			title: "Execução Autônoma",
+			title: "On-Demand",
 			description:
-				"Executa tarefas complexas sem supervisão constante, de análises a automações",
+				"Executa tarefas complexas quando você precisar, do jeito que você precisa",
 		},
 		{
 			icon: Zap,
@@ -58,17 +58,17 @@ const LandingPage = () => {
 			number: "03",
 			title: "Executar",
 			description:
-				"Delegue tarefas complexas e veja o agent trabalhar autonomamente para você",
+				"Solicite tarefas sob demanda e veja o agent trabalhar para você quando precisar",
 		},
 	];
 
 	const benefits = [
-		"Automação inteligente de processos",
-		"Análise de dados em tempo real",
+		"Delegue processos repetitivos",
+		"Análise de dados sob demanda",
 		"Integração com sistemas existentes",
 		"Respostas em linguagem natural",
 		"Aprendizado contínuo do negócio",
-		"Escalabilidade sob demanda",
+		"Assistência quando você precisar",
 	];
 
 	return (
@@ -174,7 +174,7 @@ const LandingPage = () => {
 								</h3>
 								<p className="text-body text-aalvo-text-secondary mb-6">
 									Integre diretamente nos seus sistemas existentes via API
-									RESTful. Total controle e personalização para desenvolvedores.
+									RESTful. Total controle e personalização.
 								</p>
 								<ul className="space-y-3">
 									<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
@@ -183,11 +183,11 @@ const LandingPage = () => {
 									</li>
 									<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
 										<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
-										<span>SDKs para todas linguagens</span>
+										<span>Integração flexível</span>
 									</li>
 									<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
 										<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
-										<span>Webhooks e callbacks</span>
+										<span>Controle total do agent</span>
 									</li>
 								</ul>
 							</CardContent>
@@ -285,8 +285,8 @@ const LandingPage = () => {
 								Tudo que você precisa em um só lugar
 							</h2>
 							<p className="text-body text-aalvo-text-secondary mb-8">
-								Desenvolvemos cada funcionalidade pensando em automatizar
-								processos complexos e liberar seu time para o que realmente
+								Desenvolvemos cada funcionalidade pensando em simplificar
+								processos complexos e liberar seu time para focar no que realmente
 								importa.
 							</p>
 
@@ -354,6 +354,222 @@ const LandingPage = () => {
 									<Download className="h-8 w-8 text-aalvo-text-primary" />
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* Pricing with Time Calculator */}
+			<section className="section-padding bg-aalvo-surface">
+				<div className="container-narrow">
+					<div className="text-center mb-16 fade-in-up">
+						<h2 className="text-headline text-aalvo-text-primary mb-4">
+							Automatize processos repetitivos e deixe-os no modo fácil
+						</h2>
+						<p className="text-body text-aalvo-text-secondary max-w-2xl mx-auto">
+							Calcule quanto tempo você economizaria delegando tarefas para o
+							Aalvo AI
+						</p>
+					</div>
+
+					<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+						{/* Time Calculator */}
+						<Card className="card-elevated fade-in-up">
+							<CardContent className="p-8">
+								<h3 className="text-title text-aalvo-text-primary mb-6">
+									Calculadora de Tempo
+								</h3>
+
+								<div className="space-y-6">
+									<div>
+										<label className="block text-sm font-medium text-aalvo-text-primary mb-2">
+											Quantas horas por semana você gasta em tarefas repetitivas?
+										</label>
+										<input
+											type="range"
+											min="1"
+											max="40"
+											defaultValue="10"
+											className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-aalvo-primary"
+											id="hoursRange"
+											onChange={(e) => {
+												const hours = e.target.value;
+												document.getElementById("hoursValue")!.textContent =
+													hours;
+												const saved = Math.round(Number(hours) * 0.7);
+												document.getElementById("hoursSaved")!.textContent =
+													saved.toString();
+												const monthly = saved * 4;
+												document.getElementById("monthlySaved")!.textContent =
+													monthly.toString();
+												const yearly = monthly * 12;
+												document.getElementById("yearlySaved")!.textContent =
+													yearly.toString();
+											}}
+										/>
+										<div className="flex justify-between text-sm text-aalvo-text-muted mt-2">
+											<span>1h</span>
+											<span id="hoursValue" className="font-semibold">
+												10h
+											</span>
+											<span>40h</span>
+										</div>
+									</div>
+
+									<div className="bg-aalvo-accent rounded-xl p-6 space-y-4">
+										<div className="flex justify-between items-center">
+											<span className="text-sm text-aalvo-text-secondary">
+												Tempo economizado por semana:
+											</span>
+											<span
+												id="hoursSaved"
+												className="text-2xl font-bold text-green-600"
+											>
+												7
+											</span>
+										</div>
+
+										<div className="border-t border-aalvo-border-subtle pt-4 space-y-2">
+											<div className="flex justify-between text-sm">
+												<span className="text-aalvo-text-secondary">
+													Por mês:
+												</span>
+												<span
+													id="monthlySaved"
+													className="font-semibold text-aalvo-text-primary"
+												>
+													28h
+												</span>
+											</div>
+											<div className="flex justify-between text-sm">
+												<span className="text-aalvo-text-secondary">
+													Por ano:
+												</span>
+												<span
+													id="yearlySaved"
+													className="font-semibold text-aalvo-text-primary"
+												>
+													336h
+												</span>
+											</div>
+										</div>
+
+										<div className="bg-white rounded-lg p-4 mt-4">
+											<p className="text-xs text-aalvo-text-muted text-center">
+												Isso equivale a{" "}
+												<span className="font-bold text-aalvo-text-primary">
+													14 dias úteis
+												</span>{" "}
+												por ano focando no que realmente importa
+											</p>
+										</div>
+									</div>
+
+									<div className="pt-4">
+										<p className="text-sm text-aalvo-text-secondary">
+											💡 <strong>Simplifique suas atividades:</strong> Delegue
+											relatórios, análises, pesquisas e processamento de dados para
+											o Aalvo AI
+										</p>
+									</div>
+								</div>
+							</CardContent>
+						</Card>
+
+						{/* Pricing Cards */}
+						<div className="space-y-6 fade-in-up-delay-1">
+							<Card className="card-elevated">
+								<CardContent className="p-8">
+									<div className="mb-6">
+										<h3 className="text-title text-aalvo-text-primary mb-2">
+											Plano Starter
+										</h3>
+										<p className="text-sm text-aalvo-text-secondary">
+											Para times pequenos começando a otimizar
+										</p>
+									</div>
+
+									<div className="mb-6 relative">
+										<div className="text-4xl font-bold text-aalvo-text-primary filter blur-sm select-none">
+											R$ 999
+										</div>
+										<div className="absolute inset-0 flex items-center justify-center">
+											<span className="text-sm font-medium text-aalvo-text-primary bg-aalvo-accent px-4 py-1 rounded-full">
+												Sob consulta
+											</span>
+										</div>
+									</div>
+
+									<ul className="space-y-3 mb-8">
+										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
+											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+											<span>Agent personalizado</span>
+										</li>
+										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
+											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+											<span>Suporte prioritário</span>
+										</li>
+										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
+											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+											<span>Integrações básicas</span>
+										</li>
+									</ul>
+
+									<Button className="w-full btn-secondary">
+										Solicitar orçamento
+									</Button>
+								</CardContent>
+							</Card>
+
+							<Card className="card-elevated border-2 border-aalvo-primary relative overflow-hidden">
+								<div className="absolute top-0 right-0 bg-aalvo-primary text-white text-xs font-semibold px-3 py-1 rounded-bl-lg">
+									Popular
+								</div>
+								<CardContent className="p-8">
+									<div className="mb-6">
+										<h3 className="text-title text-aalvo-text-primary mb-2">
+											Plano Enterprise
+										</h3>
+										<p className="text-sm text-aalvo-text-secondary">
+											Para operações que exigem máxima eficiência
+										</p>
+									</div>
+
+									<div className="mb-6 relative">
+										<div className="text-4xl font-bold text-aalvo-text-primary filter blur-sm select-none">
+											R$ 4.999
+										</div>
+										<div className="absolute inset-0 flex items-center justify-center">
+											<span className="text-sm font-medium text-aalvo-text-primary bg-aalvo-accent px-4 py-1 rounded-full">
+												Sob consulta
+											</span>
+										</div>
+									</div>
+
+									<ul className="space-y-3 mb-8">
+										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
+											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+											<span>Tudo do Starter +</span>
+										</li>
+										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
+											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+											<span>Integrações ilimitadas</span>
+										</li>
+										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
+											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+											<span>Treinamento customizado</span>
+										</li>
+										<li className="flex items-center gap-2 text-sm text-aalvo-text-secondary">
+											<CheckCircle2 className="h-4 w-4 text-green-600 flex-shrink-0" />
+											<span>SLA dedicado</span>
+										</li>
+									</ul>
+
+									<Button className="w-full btn-primary">
+										Agendar demonstração
+									</Button>
+								</CardContent>
+							</Card>
 						</div>
 					</div>
 				</div>
